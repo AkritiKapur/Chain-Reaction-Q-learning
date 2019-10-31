@@ -32,9 +32,8 @@ import Tkinter as Tk
 
 BLOCK_DEFAULT_COLOR = 'black'
 
-WIDTH = 3
-HEIGHT = 3
-
+WIDTH = 10
+HEIGHT = 10
 
 def initialize_tk_frame(root, agent):
     """
@@ -112,7 +111,6 @@ if __name__ == "__main__":
     std_agent = StdPlay(game)
     # Set Player agents
     agent_1 = std_agent
-
     if player == 1:
         agent = q_agent
     elif player == 0:
@@ -164,5 +162,4 @@ if __name__ == "__main__":
             # save q_agent training
             with open('training_Q.pickle', 'wb') as handle:
                 pickle.dump(q_agent.q_values, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
     print(win_stats)
